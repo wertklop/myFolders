@@ -1,0 +1,36 @@
+<idea-plugin>
+    <name>myFolders plugin for IntelliJ IDEA</name>
+    <version>1.0</version>
+    <vendor email="wertklop@yandex.ru" url="https://github.com/wertklop"/>
+
+    <description>Adds folders as favorites into FileChooser dialog toolbar</description>
+
+    <change-notes>
+        <![CDATA[<ul>
+<li><b>v1.0</b> - Initial version</li>
+        </ul>]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="171"/>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.github.wertklop.myfolders.service.FavoriteContainerApplicationService"/>
+        <projectService serviceImplementation="com.github.wertklop.myfolders.service.FavoriteContainerProjectService"/>
+    </extensions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.github.wertklop.myfolders.PluginRegistrationApplicationComponent</implementation-class>
+        </component>
+    </application-components>
+
+</idea-plugin>
