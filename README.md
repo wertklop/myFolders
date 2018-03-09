@@ -1,6 +1,6 @@
 # myFolders plugin for IntelliJ IDEA
 
-* [Jetbrains plugin page]()
+* [Jetbrains plugin page](http://plugins.jetbrains.com/plugin/10513-myfolders-plugin-for-intellij-idea)
 
 ## Description
 Adds folders as favorites into FileChooser dialog toolbar
