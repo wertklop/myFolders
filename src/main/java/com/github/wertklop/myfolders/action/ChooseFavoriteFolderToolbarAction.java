@@ -16,6 +16,7 @@
 package com.github.wertklop.myfolders.action;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.fileChooser.FileElement;
 import com.intellij.openapi.fileChooser.FileSystemTree;
 import com.intellij.openapi.fileChooser.actions.FileChooserAction;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -41,6 +42,9 @@ public class ChooseFavoriteFolderToolbarAction extends FileChooserAction {
     @Override
     protected void actionPerformed(FileSystemTree fileSystemTree, AnActionEvent event) {
         VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
+        if (FileElement.isFileHidden(file)) {
+            fileSystemTree.showHiddens(true);
+        }
         fileSystemTree.select(file, () -> fileSystemTree.expand(file, null));
     }
 }
