@@ -1,6 +1,6 @@
 <idea-plugin>
     <name>myFolders plugin for IntelliJ IDEA</name>
-    <version>1.0</version>
+    <version>1.1</version>
     <vendor email="wertklop@yandex.ru" url="https://github.com/wertklop"/>
 
     <description>Adds folders as favorites into FileChooser dialog toolbar</description>
@@ -8,6 +8,7 @@
     <change-notes>
         <![CDATA[<ul>
 <li><b>v1.0</b> - Initial version</li>
+<li><b>v1.1</b> - Fix select hidden folders</li>
         </ul>]]>
     </change-notes>
 
