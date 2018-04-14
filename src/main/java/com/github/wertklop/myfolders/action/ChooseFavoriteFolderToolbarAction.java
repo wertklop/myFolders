@@ -42,9 +42,13 @@ public class ChooseFavoriteFolderToolbarAction extends FileChooserAction {
     @Override
     protected void actionPerformed(FileSystemTree fileSystemTree, AnActionEvent event) {
         VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(new File(path));
-        if (FileElement.isFileHidden(file)) {
+        if (isHidden(file)) {
             fileSystemTree.showHiddens(true);
         }
         fileSystemTree.select(file, () -> fileSystemTree.expand(file, null));
+    }
+
+    private boolean isHidden(VirtualFile file) {
+        return FileElement.isFileHidden(file) || (file.getParent() != null && isHidden(file.getParent()));
     }
 }
